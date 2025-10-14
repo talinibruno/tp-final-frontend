@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react"
 import { useNavigate } from "react-router-dom"
-import logo from "../assets/images/logo.png"
+import logo from "../assets/images/logo-new.png"
 
 const Login = () => {
   const [password, setPassword] = useState()
@@ -60,9 +60,9 @@ const Login = () => {
         </button>
         <button>Acceder</button>
 
-        {message && <p style={{ color: "green" }}>{message}</p>}
+        {message && <p className="login-message" style={{ color: "green" }}>{message}</p>}
 
-        {error && <p style={{ color: "red" }}>{error}</p>}
+        {error && <p className="login-message" style={{ color: "red" }}>{error}</p>}
 
       </form>
       <p className="text-info">Acceso restringido • Contenido privado</p>

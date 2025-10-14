@@ -24,7 +24,7 @@ const ChatProvider = ({ children }) => {
           id: 1,
           name: "Juan perez",
           status: "online",
-          lastSeen: "",
+          lastSeen: "online",
           messages: [
             { id: 1, text: "Hola, como estas?", time: "00:40" }
           ]
@@ -44,7 +44,7 @@ const ChatProvider = ({ children }) => {
           id: 3,
           name: "Luka Nicolas Piaggi",
           status: "online",
-          lastSeen: "",
+          lastSeen: "online",
           messages: [
             { id: 1, text: "Me encanta programación!!", time: "19:00" },
             { id: 2, text: "El profe es un capo!!!!!", time: "19:01" }
