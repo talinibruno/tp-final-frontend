@@ -1,8 +1,17 @@
+/* #region General App Styles */
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
   font-family: Manrope;
+}
+
+html,
+body,
+#root {
+  min-height: 100dvh;
+  margin: 0;
 }
 
 p {
@@ -12,7 +21,7 @@ p {
 
 .app {
   display: flex;
-  height: 100vh;
+  min-height: 100dvh;
 }
 
 .light {
@@ -25,6 +34,7 @@ p {
   --accent-color: #007bff;
   --accent-color-hover: #0056b3;
   --message-color: #cef6ff;
+  --bg-gradient: linear-gradient(135deg, #CCE1F7 0%, #f5f5f5 50%, #CCE1F7 100%);
 }
 
 .dark {
@@ -37,9 +47,12 @@ p {
   --accent-color: #b2d7ff;
   --accent-color-hover: #e5f1ff;
   --message-color: #004999;
+  --bg-gradient: linear-gradient(135deg, #004999 0%, #001833 50%, #004999 100%);
 }
 
-/* Sidebar Styles */
+/* #endregion */
+
+/* #region Sidebar Styles */
 
 .sidebar-container {
   display: flex;
@@ -78,8 +91,9 @@ p {
   color: var(--text-color);
 }
 
+/* #endregion */
 
-/* User List Styles */
+/* #region User List Styles */
 
 .user-list {
   list-style: none;
@@ -125,8 +139,9 @@ p {
   border: 2px solid var(--border-color);
 }
 
+/* #endregion */
 
-/* LogOut Button Style */
+/* #region LogOut and ChangeTheme Button Style */
 
 .sidebar-btns {
   display: flex;
@@ -174,8 +189,9 @@ p {
   background-color: var(--accent-color-hover);
 }
 
+/* #endregion */
 
-/* Not Found Chat Styles */
+/* #region Not Found Chat Styles */
 
 .chat {
   flex: 1;
@@ -233,8 +249,9 @@ p {
   background-color: var(--accent-color-hover);
 }
 
+/* #endregion */
 
-/* Chat Styles */
+/* #region Chat Styles */
 
 .chat-header {
   padding: 12px 15px;
@@ -250,6 +267,11 @@ p {
   align-items: center;
   gap: 10px;
   color: var(--text-color);
+}
+
+.chat-user-data {
+  display: flex;
+  flex-direction: column;
 }
 
 .chat-user span {
@@ -360,11 +382,12 @@ p {
   background-color: var(--accent-color-hover);
 }
 
+/* #endregion */
 
-/* Login Page Styles */
+/* #region Login Page Styles */
 
 .login-main {
-  height: 100vh;
+  min-height: 100dvh;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -440,8 +463,9 @@ form button:hover {
   color: black;
 }
 
+/* #endregion */
 
-/* Chat Pop Up Styles */
+/* #region Chat Pop Up Styles */
 
 .cont-popup {
   background-color: rgba(212, 212, 212, 0.5);
@@ -455,6 +479,9 @@ form button:hover {
 }
 
 .popup {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   background-color: var(--bg-color);
   padding: 20px;
   border-radius: 10px;
@@ -463,10 +490,30 @@ form button:hover {
   color: var(--text-color);
 }
 
-.popup button {
-  max-width: 300px;
-  margin-top: 35px;
+.popup-divider {
+  display: flex;
+  width: 100%;
+  border-top: 1px solid var(--border-color);
+  margin: 10px;
+}
+
+.popup h2 {
+  margin-bottom: 15px;
+}
+
+.popup h3 {
+  font-weight: 300;
   font-size: 16px;
+}
+
+.popup-coming-soon {
+  color: var(--text-color-details)
+}
+
+.popup-close {
+  max-width: 300px;
+  margin-top: 15px;
+  font-size: 14px;
   font-weight: 700;
   color: var(--text-color-secondary);
   padding: 8px 25px;
@@ -477,12 +524,34 @@ form button:hover {
   cursor: pointer;
 }
 
-.popup button:hover {
+.popup-close:hover {
   background-color: var(--accent-color-hover);
 }
 
+.popup-change-theme {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 5px;
+  border-radius: 50px;
+  padding: 10px;
+  background-color: var(--accent-color);
+  font-weight: bold;
+  border: none;
+  color: var(--text-color-secondary);
+  cursor: pointer;
+  transition: background-color .3s ease-in-out;
+}
 
-/* 404 NotFound Styles */
+.change-theme:hover {
+  background-color: var(--accent-color-hover);
+}
+
+/* #endregion */
+
+/* #region 404 NotFound Styles */
 
 .section-not-found {
   display: flex;
@@ -537,3 +606,277 @@ form button:hover {
 .section-not-found button:hover {
   background-color: var(--accent-color-hover);
 }
+
+/* #endregion */
+
+/* #region Help Styles */
+
+.help-page {
+  min-height: 100dvh;
+  display: flex;
+  flex-direction: column;
+  background: var(--bg-gradient);
+  color: var(--text-color);
+  text-align: center;
+  align-items: center;
+}
+
+.help-page-div {
+  display: flex;
+  flex-direction: column;
+  color: var(--text-color);
+  text-align: center;
+  align-items: center;
+  padding: 0px 25%;
+}
+
+.help-page h2 {
+  margin-bottom: 25px;
+}
+
+.help-page hr {
+  border-top: 1px solid var(--border-color);
+  margin: 25px;
+  width: 100%;
+}
+
+.btns-help-container {
+  display: flex;
+  flex-direction: row;
+  margin: 25px;
+  gap: 25px;
+  width: 100%;
+  justify-content: space-between;
+  align-items: center;
+}
+
+
+
+.help-btns {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 5px;
+  border-radius: 50px;
+  padding: 10px;
+  background-color: var(--accent-color);
+  font-weight: bold;
+  border: none;
+  color: var(--text-color-secondary);
+  cursor: pointer;
+  transition: background-color .3s ease-in-out;
+}
+
+.help-btns:hover {
+  background-color: var(--accent-color-hover);
+}
+
+.help-header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+  background: rgba(255, 255, 255, 0.06);
+  border-radius: 1rem;
+  box-shadow: 0 7px 25px rgba(0, 0, 0, 0.2);
+  backdrop-filter: blur(7px);
+  -webkit-backdrop-filter: blur(4.7px);
+  border: 1px solid rgba(255, 255, 255, 0.28);
+}
+
+.help-header p {
+  text-align: center;
+  color: var(--text-color);
+  padding: 10px;
+  font-size: 14px;
+}
+
+.help-login-screen {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 50%;
+  padding: 20px;
+  border-radius: 2rem;
+}
+
+
+.help-features-general {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.help-feat {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  padding: 20px;
+  background: rgba(255, 255, 255, 0.06);
+  border-radius: 1rem;
+  box-shadow: 0 7px 25px rgba(0, 0, 0, 0.2);
+  backdrop-filter: blur(7px);
+  -webkit-backdrop-filter: blur(4.7px);
+  border: 1px solid rgba(255, 255, 255, 0.28);
+  font-size: 16px;
+}
+
+.help-feat h3 {
+  font-size: 18px;
+  color: var(--accent-color-hover);
+}
+
+.help-new-features {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  padding: 20px;
+  margin-top: 20px;
+  background: rgba(255, 255, 255, 0.06);
+  border-radius: 1rem;
+  box-shadow: 0 7px 25px rgba(0, 0, 0, 0.2);
+  backdrop-filter: blur(7px);
+  -webkit-backdrop-filter: blur(4.7px);
+  border: 1px solid rgba(255, 255, 255, 0.28);
+  font-size: 16px;
+}
+
+.help-dev-logos {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 100px;
+  padding: 20px;
+  background: rgba(255, 255, 255, 0.06);
+  border-radius: 1rem;
+  box-shadow: 0 7px 25px rgba(0, 0, 0, 0.2);
+  backdrop-filter: blur(7px);
+  -webkit-backdrop-filter: blur(4.7px);
+  border: 1px solid rgba(255, 255, 255, 0.28);
+  margin-top: 25px;
+  margin-bottom: 10px;
+}
+
+.logo-vite {
+  max-width: 200px;
+  max-height: 100px;
+}
+
+.logo-react {
+  max-width: 200px;
+  max-height: 100px;
+}
+
+.logo-vercel {
+  max-width: 200px;
+  max-height: 200px;
+}
+
+.help-sign {
+  margin-bottom: 30px;
+}
+
+/* #endregion */
+
+/* #region Breakpoints Media */
+
+/*---Primer Breakpoint: MiniScreen? ---*/
+
+@media(max-width: 650px) {
+
+  .user-info,
+  .search,
+  .btn-log-out p,
+  .change-theme,
+  .chat-avatar {
+    display: none;
+  }
+
+  button.btn-chat-gallery,
+  button.btn-chat-camera {
+    display: none;
+  }
+
+  .chat-user {
+    flex-direction: column;
+    font-size: 14px;
+    align-items: start;
+  }
+
+  .chat-user span {
+    font-size: 11px;
+  }
+
+  .btn-log-out {
+    padding: 10px;
+  }
+
+  .sidebar,
+  .sidebar-container {
+    min-width: auto;
+  }
+
+  .avatar {
+    margin-right: 0px;
+  }
+
+  .message {
+    max-width: 100%;
+  }
+
+  .user-not-found img {
+    width: 150px;
+  }
+
+  .user-not-found h2,
+  .user-not-found p {
+    margin: 0px 10px;
+    margin-top: 10px;
+  }
+
+
+
+  .help-page-div {
+    padding: 5px 5%;
+  }
+
+  .help-login-screen {
+    width: 100%;
+    padding: 5px;
+  }
+
+  .help-features-general {
+    grid-template-columns: repeat(1, 1fr);
+  }
+
+  .help-dev-logos {
+    flex-direction: column;
+  }
+
+}
+
+@media(max-width: 1350px) {
+  .help-page-div {
+    padding: 5px 5%;
+  }
+
+  .help-login-screen {
+    width: 100%;
+    padding: 5px;
+  }
+
+  .help-features-general {
+    grid-template-columns: repeat(1, 1fr);
+  }
+
+  .help-dev-logos {
+    flex-direction: column;
+  }
+}
+
+/* #endregion */
